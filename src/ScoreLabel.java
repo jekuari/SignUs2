@@ -3,6 +3,8 @@ import java.awt.Insets;
 
 import javax.swing.JLabel;
 
+/* This class is in charge of displaying the score for the user
+constrains set the label to show at the bottom of the canvas*/
 public class ScoreLabel extends JLabel {
    private int score;
 
