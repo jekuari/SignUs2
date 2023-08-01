@@ -8,13 +8,10 @@ import javax.swing.JLabel;
 */
 public class LetterToGuess extends JLabel {
    public GridBagConstraints constraints;
-   private char letter;
 
    public LetterToGuess(char letter) {
       super(Character.toString(letter));
       setFont(getFont().deriveFont(48.0f));
-
-      this.letter = letter;
 
       this.constraints = new GridBagConstraints();
       this.constraints.fill = GridBagConstraints.BOTH;
