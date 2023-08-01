@@ -3,8 +3,10 @@ import java.awt.Insets;
 
 import javax.swing.JLabel;
 
+/* This class is in charge of displaying the letter to guess
+ its constrains locate the label at the middle of canvas
+*/
 public class LetterToGuess extends JLabel {
-   private int secondsLeft;
    public GridBagConstraints constraints;
    private char letter;
 
