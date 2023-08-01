@@ -6,7 +6,7 @@ import javax.swing.*;
 /**
  * This class is the main class of the application.
  * It is used to start the application.
- */
+*/
 public class App {
    private static final char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
    private static char letter = letters[(int) (Math.random() * letters.length)];
