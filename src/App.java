@@ -159,6 +159,9 @@ public class App {
       startNewRount();
    }
 
+   /* This method updates the content of each one of the four buttons (image, letter and position)
+    * based on data provided from the randomCardOptions array
+    */
    public static void updateAnswers(CardOptions[] randomCardOptions) {
 
       button1.update(randomCardOptions[0].imagePath, randomCardOptions[0].letter, 0);
@@ -169,7 +172,6 @@ public class App {
 
       button4.update(randomCardOptions[3].imagePath, randomCardOptions[3].letter, 3);
 
-      gameWindow.revalidate();
    }
 
    public static char generateRandomLetter() {
@@ -177,6 +179,9 @@ public class App {
       return letter;
    }
 
+   /* Method iterates through the array allPossibleAnswers
+   compares each char with the given letter from generateRandomLetter
+    */
    public static int getIndexOfCorrectAnswer(char letter) {
       int index = 0;
       for (int i = 0; i < allPossibleAnswers.length; i++) {
@@ -187,10 +192,15 @@ public class App {
       return index;
    }
 
+   /* Method initialices an array of size 4
+    * the correct letter is stored inside the first index
+    generates randomly the other three indexes
+   */
    public static int[] generateRandomIndexes(int respectedIndex) {
 
       int[] randomIndexes = new int[4];
 
+//    loop that keeps running until the random indexes are generated without any repetitions.
       while (true) {
 
          boolean containsRepeated = false;
@@ -200,6 +210,7 @@ public class App {
          randomIndexes[2] = (int) (Math.random() * allPossibleAnswers.length);
          randomIndexes[3] = (int) (Math.random() * allPossibleAnswers.length);
 
+         //  Iterates through array, comparing each case with the others
          for (int i = 0; i < randomIndexes.length; i++) {
             for (int j = 0; j < randomIndexes.length; j++) {
                if (randomIndexes[i] == randomIndexes[j] && i != j) {
@@ -217,6 +228,9 @@ public class App {
 
    }
 
+   /* create an array of CardOptions objects, where one of the objects represents the correct answer (denoted by rightAnswer),
+   the other three are randomly selected from the array allPossibleAnswers.
+   this method randomizes the set of card options. */
    public static CardOptions[] generateRandomSetOfCardOptions(char rightAnswer) {
       CardOptions[] randomCardOptions = new CardOptions[4];
       int indexOfCorrectAnswerChar = getIndexOfCorrectAnswer(rightAnswer);
