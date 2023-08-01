@@ -1,12 +1,20 @@
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-
 import javax.swing.*;
 
+/**
+ * This class is a JLabel that displays the time left in the game.
+ * It is used to display the time left in the game.
+*/
 public class CountDown extends JLabel {
    private int secondsLeft;
    public GridBagConstraints constraints;
 
+   /**
+    * Constructor
+    * Parameters:
+    * * initialSeconds - The number of seconds to start the countdown at
+   */
    public CountDown(int initialSeconds) {
       this.secondsLeft = initialSeconds;
       updateLabelText();
