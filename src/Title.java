@@ -8,29 +8,30 @@ import javax.swing.JLabel;
  */
 public class Title extends JLabel {
 
-   private GridBagConstraints constraints;
+  private GridBagConstraints constraints;
 
-   /* Constructor
-    * parameter of text contains SignUs
-    */
-   public Title(String text) {
-      super(text);
-      setFont(getFont().deriveFont(64.0f));
-      GridBagConstraints constraints = new GridBagConstraints();
-      constraints.fill = GridBagConstraints.BOTH;
-      constraints.insets = new Insets(10, 10, 10, 10);
+  /*
+   * Constructor
+   * parameter of text contains SignUs
+   */
+  public Title(String text) {
+    super(text);
+    setFont(getFont().deriveFont(64.0f));
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.fill = GridBagConstraints.BOTH;
+    constraints.insets = new Insets(10, 10, 10, 10);
 
-      constraints.gridx = 0;
-      constraints.gridy = 0;
-      constraints.gridwidth = 4;
-      constraints.gridheight = 1;
+    constraints.gridx = 0;
+    constraints.gridy = 0;
+    constraints.gridwidth = 4;
+    constraints.gridheight = 1;
 
-      setHorizontalAlignment(JLabel.CENTER);
+    setHorizontalAlignment(JLabel.CENTER);
 
-      this.constraints = constraints;
-   }
+    this.constraints = constraints;
+  }
 
-   public GridBagConstraints getConstraints() {
-      return constraints;
-   }
+  public GridBagConstraints getConstraints() {
+    return constraints;
+  }
 }
